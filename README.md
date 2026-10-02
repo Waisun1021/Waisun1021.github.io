@@ -1,7 +1,7 @@
 # 一起搭獨立網站
 
-GitHub Pages 主頁搭配原有 Google Apps Script 計算工具。四個原創內容頁，支援英文與深淺色外觀。
+正式網址：https://waisun1021.github.io/
 
-計算工具與主頁的語言／外觀設定獨立。現在不載入 AdSense 或 Analytics；不要使用假的 publisher ID。收到真實 AdSense 驗證碼後再放入各頁 head，部署 ads.txt，設定所需同意機制並送審。AdSense 審核不保證通過。
+首頁是直接由 GitHub Pages 提供的 HTML/CSS/JavaScript，不使用 iframe。三種行程、公式、繁中英文、深淺色、手動距離、叫車建議和分享功能在同一頁執行。只有自動開車距離透過 Google Apps Script v4 查詢；只送地點、模式和語言，不送姓名或車資，不保存行程。查詢採用限定 callback 的 JSONP，回應只含此請求的路線資料，無帳號私密資料；前端有逾時及過期结果防護。
 
-Apps Script 或 Google 地圖查詢額度不足時可改用手動路段距離。網站不提供支付或叫車服务。
+Google Apps Script 來源仍在私人 taxi-split-web 儲存庫。AdSense 程式碼與 ads.txt 已設定，網站已送審，尚須 Google 核准。

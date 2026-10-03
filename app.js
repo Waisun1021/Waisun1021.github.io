@@ -64,7 +64,7 @@ function decorateAddresses(){
   const button=document.createElement('button');button.type='button';button.id=input.id+'-search';button.dataset.address=input.id;button.className='address-search';button.textContent=t('search');button.setAttribute('aria-label',t('search')+' · '+(input.getAttribute('aria-label')||t('sharedStop')));row.append(button);
   const note=document.createElement('small');note.id=input.id+'-selected';note.className='selected-address';note.textContent=t('addressSelected');note.hidden=!selectedAddresses.has(input.id);row.after(note);
  });
- document.querySelectorAll('.address-search').forEach(b=>b.textContent=t('search'));
+ document.querySelectorAll('.address-search').forEach(b=>{b.textContent=t('search');const input=$(b.dataset.address);b.setAttribute('aria-label',t('search')+' · '+(input.id==='shared'?$('shared-label').textContent:input.getAttribute('aria-label')));});
  document.querySelectorAll('.selected-address').forEach(n=>n.textContent=t('addressSelected'));
 }
 document.addEventListener('click',event=>{const button=event.target.closest('[data-address]');if(!button)return;addressTarget=button.dataset.address;addressCandidates=[];addressSearchVersion++;$('address-query').value=$(addressTarget).value;$('address-query').placeholder=t('searchPlaceholder');$('address-results').replaceChildren();$('address-status').textContent='';$('address-search-button').textContent=t('search');$('address-search-button').disabled=false;$('address-close').setAttribute('aria-label',t('close'));$('address-dialog').showModal();$('address-query').focus();});
